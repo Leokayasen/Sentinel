@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "sentinel",
+	"version": "${version}",
+	"name": "Sentinel",
+	"description": "A Minecraft Fabric admin mod for players with OP to run commands and handle gamerules.",
+	"authors": [
+		"Leokayasen"
+	],
+	"contact": {
+		"homepage": "https://github.com/Leokayasen/Sentinel",
+		"sources": "https://github.com/Leokayasen/Sentinel"
+	},
+	"license": "MIT",
+	"icon": "assets/sentinel/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.leokayasen.sentinel.Sentinel"
+		],
+		"client": [
+			"com.leokayasen.sentinel.client.SentinelClient"
+		]
+	},
+	"mixins": [
+		"sentinel.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
