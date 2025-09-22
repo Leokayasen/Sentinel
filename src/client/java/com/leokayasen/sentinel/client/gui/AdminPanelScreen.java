@@ -17,6 +17,7 @@ public class AdminPanelScreen extends Screen {
     private ButtonWidget executeButton;
     private ButtonWidget gameruleButton;
     private ButtonWidget playerManagementButton;
+    private ButtonWidget broadcastButton;
     private ButtonWidget closeButton;
 
     public AdminPanelScreen() {
@@ -52,9 +53,15 @@ public class AdminPanelScreen extends Screen {
                 .build();
         this.addDrawableChild(this.playerManagementButton);
 
+        // Broadcast/Announcements button
+        this.broadcastButton = ButtonWidget.builder(Text.literal("Broadcast & Announcements"), button -> openBroadcastScreen())
+                .dimensions(centerX - BUTTON_WIDTH / 2, startY + 4 * (BUTTON_HEIGHT + MARGIN), BUTTON_WIDTH, BUTTON_HEIGHT)
+                .build();
+        this.addDrawableChild(this.broadcastButton);
+
         // Close button
         this.closeButton = ButtonWidget.builder(Text.literal("Close"), button -> this.close())
-                .dimensions(centerX - BUTTON_WIDTH / 2, startY + 4 * (BUTTON_HEIGHT + MARGIN), BUTTON_WIDTH, BUTTON_HEIGHT)
+                .dimensions(centerX - BUTTON_WIDTH / 2, startY + 5 * (BUTTON_HEIGHT + MARGIN), BUTTON_WIDTH, BUTTON_HEIGHT)
                 .build();
         this.addDrawableChild(this.closeButton);
 
@@ -104,6 +111,12 @@ public class AdminPanelScreen extends Screen {
     private void openPlayerManagementScreen() {
         if (this.client != null) {
             this.client.setScreen(new PlayerManagementScreen(this));
+        }
+    }
+
+    private void openBroadcastScreen() {
+        if (this.client != null) {
+            this.client.setScreen(new BroadcastScreen(this));
         }
     }
 

@@ -7,6 +7,7 @@ A Minecraft Fabric 1.21 admin mod for players with OP to run commands and handle
 - **Command Execution**: Execute any command directly from the GUI without typing in chat
 - **Gamerule Management**: Toggle common gamerules with a simple click interface
 - **Player Management**: Kick, ban, teleport, change gamemode, and manage OP status for players
+- **Broadcast & Announcements**: Send titles and subtitles to players using Minecraft's native title system
 - **Permission-based**: Only accessible to players with operator permissions
 
 ## Project Structure
@@ -20,7 +21,8 @@ src/
 │   └── gui/
 │       ├── AdminPanelScreen.java        # Main admin panel GUI
 │       ├── GameruleScreen.java          # Gamerule management interface
-│       └── PlayerManagementScreen.java  # Player administration tools
+│       ├── PlayerManagementScreen.java  # Player administration tools
+│       └── BroadcastScreen.java         # Broadcast & announcements system
 └── main/resources/
     ├── fabric.mod.json                  # Mod metadata
     └── sentinel.mixins.json             # Mixin configuration
@@ -35,6 +37,7 @@ src/
    - **Main Panel**: Execute commands directly
    - **Gamerule Screen**: Toggle gamerules like keepInventory, doFireTick, mobSpawning, etc.
    - **Player Management**: Kick, ban, teleport, change gamemode, and manage OP status
+   - **Broadcast & Announcements**: Send titles and subtitles to all players or specific players
 
 ## Building
 
